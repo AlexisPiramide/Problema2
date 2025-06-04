@@ -23,14 +23,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Optional: space between image and h2 */
+    gap: 10px;
 }
 
 .players-container .player img {
     width: 80px;
     height: 60px;
     object-fit: cover;
-    /* margin-bottom removed to align with h2 */
     margin-bottom: 0;
 }
 
@@ -40,5 +39,5 @@
     text-align: center;
     display: flex;
     align-items: center;
-    height: 40px; /* Match image height for vertical alignment */
+    height: 40px;
 }

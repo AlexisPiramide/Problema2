@@ -4,6 +4,7 @@ import './App.css'
 import "./styles/players.css"
 import "./styles/home.css"
 import generatePlayers from './cyphers/player.cypher.js'
+import getDenominationQuantity from './cyphers/bank.cypher.js'
 import MonopolyBoard from './Board.jsx'
 function App() {
 
@@ -14,13 +15,13 @@ function App() {
 
     useEffect(() => {
         const result = generatePlayers("TREASURE");
-
+        const bills = getDenominationQuantity("WELLDONE!");
         const newPositions = result.map(player => ({
             position: player.position,
             img: player.img,
         }));
         setPositions(newPositions);
-        console.log(newPositions);
+        setBillsbank(bills);
 
         setPlayers(result);
     }, []);

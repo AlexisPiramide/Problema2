@@ -5,26 +5,16 @@ import Tile from './Tile';
 export default function MonopolyBoard({ positions }) {
     const cells = [];
 
-    // Helper: get players on a given cell (by row & col)
+
     function getPlayersOnCell(row, col, span = 1) {
-      // For corners, span is 2x2; for edges span 1x1
       return positions.filter(({ position }) => {
         const cell = getCellForPosition(position);
         if (!cell) return false;
-        // Check if player's cell overlaps this cell
         const rowsOverlap = (row <= cell.row && cell.row < row + span) || (cell.row <= row && row < cell.row + cell.span);
         const colsOverlap = (col <= cell.col && cell.col < col + span) || (cell.col <= col && col < cell.col + cell.span);
         return rowsOverlap && colsOverlap;
       });
     }
-
-    // Corners
-    const cornerPositions = {
-      parking: 21,
-      gotojail: 31,
-      jail: 11,
-      go: 1,
-    };
 
     cells.push(
       <div key={`corner-1-1`} className="corner" id="parking" style={{ gridRow: `1 / span 2`, gridColumn: `1 / span 2` }}>
