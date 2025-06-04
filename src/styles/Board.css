@@ -1,0 +1,98 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(13,1fr);
+    grid-template-rows: repeat(13,1fr);
+    gap: 2px;
+    background: #333;
+    width: 100%;
+    height: 100%;
+}
+
+.corner {
+    background: #f5a623;
+    border: 2px solid #b06a00;
+    box-sizing: border-box;
+}
+
+.edge-horizontal {
+    background: #4a90e2;
+    border: 2px solid #2a5a9e;
+    box-sizing: border-box;
+}
+
+.edge-vertical {
+    background: #50e3c2;
+    border: 2px solid #289a7e;
+    box-sizing: border-box;
+}
+
+.center {
+    background: #d0021b;
+    border: 2px solid #900000;
+    box-sizing: border-box;
+}
+
+
+.board>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.board>div>div.top{
+    background-color: red;
+
+}
+
+.board>div.top{
+    flex-direction: column-reverse;
+}
+
+
+.board>div.bottom{
+    flex-direction: column;
+}
+
+.board>div.top>div.top,
+.board>div.bottom>div.top{
+    width: 100%;
+    height: 20%;
+}
+
+.board>div.top>div.bottom,
+.board>div.bottom>div.bottom{
+    width: 100%;
+    height: 80%;
+}
+/*----------------*/
+.board>div.left{
+    flex-direction: row-reverse;
+}
+
+
+.board>div.right{
+    flex-direction: row;
+}
+
+.board>div.left>div.top,
+.board>div.right>div.top{
+    width: 20%;
+    height: 100%;
+}
+
+.board>div.left>div.bottom,
+.board>div.right>div.bottom{
+    width: 80%;
+    height: 100%;
+}
+
+.player-img {
+  width: 20px;  /* Adjust size as needed */
+  height: 20px;
+  border-radius: 50%;  /* Optional: make images round */
+  margin: 1px;
+  object-fit: cover;
+}
